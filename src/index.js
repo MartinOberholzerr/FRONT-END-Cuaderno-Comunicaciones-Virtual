@@ -2,10 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+//const signUpButton = document.getElementById('signUp');
+//const signInButton = document.getElementById('signIn');
+//const container = document.getElementById('container');
+
+//signUpButton.addEventListener('click', () => {
+//	container.classList.add("right-panel-active");
+//});
+
+//signInButton.addEventListener('click', () => {
+//	container.classList.remove("right-panel-active");
+//});
 
 root.render(<div>
+	
   <h1>Cuaderno de comunicaciones digital</h1>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
@@ -56,6 +69,7 @@ root.render(<div>
 </div>
 
   <script  src="./script.js"></script>
+  
 </div>)
 
 
