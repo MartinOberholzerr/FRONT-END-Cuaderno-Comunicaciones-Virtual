@@ -1,0 +1,179 @@
+body{
+  margin: 0;
+  padding: 20px 0;
+  background-color: rgb(234, 234, 235);
+  /*
+  background-image: linear-gradient(45deg, #ffffff 0%, #8badd3 60%);  
+  background-color: #3e6383;
+  background-image:url(IMG/Background.jpg) ;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: linear-gradient(180deg, #202f5f 0%, rgba(139,173,211,1)51%);
+  */
+}
+
+img{
+  max-width: 100%;
+}
+.background{
+  margin: 0 ;
+  margin: 5%;
+  border-radius: 20px;
+  }
+
+@supports (display: grid) {
+
+  .grid {
+    display: grid;
+    grid-gap: 1.5vw;
+    min-height: 100vh;
+    padding: 1.5vw;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: (3, minmax(20vh, 1fr));
+    grid-template-areas:
+      "hero   hero"
+      "big1   big1"
+      "med1   med1"
+      "med2   med2";
+  }
+
+  @media screen and (min-width: 750px) {
+    .grid {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 25vh);
+      grid-template-areas:
+        "hero   hero   hero   hero  big1 big1 big1"
+        "hero   hero   hero   hero  big1 big1 big1"
+        "med2   med2   med1   med1  big1 big1 big1"
+        "med2   med2   med1   med1  big1 big1 big1";
+    }
+  }
+
+  .grid .item:nth-child(1)  { grid-area: hero; }
+  .grid .item:nth-child(2)  { grid-area: big1; }
+  .grid .item:nth-child(3)  { grid-area: med1; }
+  .grid .item:nth-child(4)  { grid-area: med2; }
+}
+
+/* flexbox fallback is the browser does not support display:grid */
+@supports not (display: grid) {
+
+  .grid {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 100vh;
+    padding: 0.75vw;  
+  }
+
+  .grid .item {
+    min-height: 20vh;
+    margin: 0.75vw;
+    border-radius: 20px;
+  }
+
+  .grid .item:nth-child(1)  { flex: 0 1 calc(100% - 1.5vw); height: 50vh; }
+  .grid .item:nth-child(2)  { flex: 0 1 calc(100% - 1.5vw); height: 30vh; }
+  .grid .item:nth-child(3)  { flex: 0 1 calc(100% - 1.5vw); }
+  .grid .item:nth-child(4)  { flex: 0 1 calc(100% - 1.5vw); }
+
+
+  @media screen and (min-width: 750px) {
+    .grid .item:nth-child(1)  { flex: 0 1 calc(60% - 1.5vw); }
+    .grid .item:nth-child(2)  { flex: 0 1 calc(40% - 1.5vw); height: 50vh; }
+  }
+
+
+}
+
+/* Styles, just for fun */
+
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
+@supports not (display: grid) {
+  body:before {
+    content: 'Sorry, seems like your browser doesn\'t support display: grid. Below is the flexbox fallback.';
+    display: block;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  background: #bebebe;
+  opacity: 0;
+  color: #cc9c00;
+  font-size: 0.875rem;
+  transition: opacity 500ms, transform 500ms;
+}
+
+.tooltip:before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: calc(50% - 10px);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #29343d;
+}
+
+.grid .item:hover .tooltip,
+.grid .item:focus .tooltip {
+  opacity: 1;
+  transform: translateY(70px);
+}
+
+.grid .item {
+  position: relative;
+  padding: 1vw;
+  background-position:  left bottom;
+  background-size: 150% 100%;
+  transition: background 500ms, outline 500ms;
+  background-position: top left;
+  outline: transparent;
+  border-radius: 20px;
+}
+
+.grid .item:hover,
+.grid .item:focus {
+  background-position: top right;
+}
+
+.grid .item:focus {
+  outline: 2px solid #000000;
+}
+
+.grid .item:nth-child(1)  { background-color: white; }
+.grid .item:nth-child(2)  { background-color: white; }
+.grid .item:nth-child(3)  { background-color: white; }
+.grid .item:nth-child(4)  { background-color: white; }
+  
+  
+.nav{
+  margin: 0;
+  padding: 0;
+  top: 0;
+  z-index: 1;
+  position: fixed;
+  background-color: #233368;
+  width: 100%;
+  height: 50px;
+}
