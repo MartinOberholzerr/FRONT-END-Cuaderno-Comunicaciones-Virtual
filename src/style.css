@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
 body{
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 20px 0;
   background-color: rgb(234, 234, 235);
@@ -20,6 +22,7 @@ img{
   margin: 0 ;
   margin: 5%;
   border-radius: 20px;
+  box-shadow: 2px 5px 5px -6px black; 
   }
 
 @supports (display: grid) {
@@ -52,7 +55,6 @@ img{
         "med2   med2   med1   med1  big1 big1 big1";
     }
   }
-
   .grid .item:nth-child(1)  { grid-area: hero; }
   .grid .item:nth-child(2)  { grid-area: big1; }
   .grid .item:nth-child(3)  { grid-area: med1; }
@@ -105,9 +107,6 @@ img{
 }
 
 .box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 }
 
@@ -158,7 +157,8 @@ img{
 }
 
 .grid .item:focus {
-  outline: 2px solid #000000;
+  transition: box-shadow 900ms, outline 1100ms;
+  box-shadow: 10px 10px 10px -6px black;
 }
 
 .grid .item:nth-child(1)  { background-color: white; }
@@ -176,4 +176,21 @@ img{
   background-color: #233368;
   width: 100%;
   height: 50px;
+}
+
+.notice{
+  display: inline-block;
+  margin: 7px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 100%;
+  /*
+  border-color: black;
+  border-width: 10px;
+  border-style: solid;
+  */
+}
+h1, h2, P{
+  text-align: center;
+  font-family: 'Roboto', sans-serif; 
 }
