@@ -1,7 +1,18 @@
+function Header(){
+  return(
+    <><header class="cd-header">
+      <div id="cd-logo"><a href="#0"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-logo_2.svg" alt="Logo"/></a></div>
+      <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+    </header></>
+  )
+}
+
 function Home() {
   return (
-    <><header>
-      <div class="nav"><p>Cuaderno de comunicanes virtual</p></div>
+    <><header class="cd-header">
+    <a class="cd-menu-trigger" href="#main-nav"><span></span></a>
+    <h2 class="title">E.P.E.T 20</h2>
+    <div id="cd-logo"><a href="#0"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-logo_2.svg" alt="Logo"/></a></div>
   </header>
   <div class="background">
     <div class="grid ">
@@ -12,6 +23,8 @@ function Home() {
               <div class="notice">Noticia 2</div><br/>
               <div class="notice">Noticia 3</div><br/>
               <div class="notice">Noticia 4</div><br/>
+              <div class="notice">Noticia 5</div><br/>
+              <div class="notice">Noticia 6</div><br/>
             </div>
           </div>
           <div class="item" tabindex="2">
@@ -60,7 +73,6 @@ export default function MyApp() {
   return (
     <div>
       <Home />
-      <Box />
     </div>
   );
 }
